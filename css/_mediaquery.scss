@@ -1,0 +1,15 @@
+@charset 'UTF-8';
+
+//*  media-query's breakpoints
+$breakpoints: (
+  lg: "screen and (min-width: 901px) and (max-width: 1280px)",//1520px
+  pc: "print,screen and (min-width: 901px)",
+  ltb: "screen and (max-width: 900px)",
+  tb: "screen and (max-width: 768px)",
+  sp: "screen and (max-width: 499px)",
+);
+@mixin media($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

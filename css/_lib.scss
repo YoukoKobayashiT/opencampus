@@ -1,0 +1,47 @@
+@charset 'UTF-8';
+
+/*  scroll  */
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --header-height: 146px;
+}
+// .header {
+//   height: var(--header-height);
+//   @media screen and(max-width:900px) {
+//     height: 80px;
+//   }
+// }
+:target {
+  scroll-margin-top: var(--header-height);
+}
+
+/*  font  */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Sawarabi+Gothic&display=swap");
+
+body {
+  font-family: "M PLUS 1p", sans-serif;
+  font-family: "Sawarabi Gothic", sans-serif;
+}
+
+/*  document  */
+body {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: block;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}

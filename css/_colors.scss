@@ -1,0 +1,42 @@
+@charset 'UTF-8';
+
+/*  //colors_var  */
+$white: #fff;
+$main: #191970;
+$base: #435b99;
+$base3: rgba(125, 160, 219, 0.2); //#7da0db; 1202
+$accent: #bed5e7; //original
+$btn: #2b63a8;
+$nav: #6a9bd9;
+$lighting: rgba(252, 240, 242, 0.7); //#fcf0f2;
+// $toin: #001345;
+// $base2: rgba(125, 160, 219, 0.85); //#7da0db; 1202
+// $petal1: #ffc0cb;
+// $petal2: #db7093;
+
+//*  sections' colors
+.header,
+#first,
+#footer {
+    background-color: $main;
+    color: $white;
+}
+#examination_second {
+    background-color: $base;
+    color: $white;
+}
+#second,
+#third,
+#forth,
+#examination {
+    background-color: $base3;
+    color: $main;
+}
+#forth {
+    background-color: $white;
+    color: $main;
+}
+
+
+
+

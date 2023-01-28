@@ -1,0 +1,618 @@
+@charset 'UTF-8';
+
+@import "reset.scss";
+@import "lib.scss";
+@import "mediaquery.scss";
+@import "colors.scss";
+@import "fontSize.scss";
+@import "cmp.scss";
+@import "footer.scss";
+
+/*  //firstView */
+/*  firstView's capcure */
+.cover-picture {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cover-picture-first__inner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  &.firstView {
+    background-image: url("../asset/firstView.jpg");
+    @include media(tb) {
+      background-image: url("../asset/firstView_sp.jpg");
+    }
+  }
+}
+.cover-picture-first__on-up {
+  position: absolute;
+  color: $white;
+  display: block;
+  width: 100%;
+  top: 8vh;
+  left: 4vw;
+  // font-size: clamp(80px, 100/1200 * 100vw, 120px);
+  font-size: clamp(76px, 90/1200 * 100vw, 110px);
+  font-weight: 800;
+  font-feature-settings: "palt";
+  text-transform: uppercase;
+  line-height: 1.3;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  @include media(lg) {
+    top: 10vh;
+    font-size: clamp(74px, 90/1200 * 100vw, 90px);
+    font-weight: 800;
+  }
+  @include media(ltb) {
+    top: 26vh;
+    font-size: clamp(66px, 68/900 * 100vw, 72px);
+    // font-size: 72px; //52
+    font-weight: 800;
+  }
+  @include media(tb) {
+    top: 28vh;
+    font-size: clamp(58px, 64/768 * 100vw, 66px);
+    font-weight: 900;
+  }
+  @include media(sp) {
+    top: 24vh;
+    left: 24px; //50
+    font-size: clamp(36px, 56/500 * 100vw, 58px);
+    font-weight: 900;
+  }
+}
+
+.cover-picture-first__on-down {
+  position: absolute;
+  color: $white;
+  display: block;
+  width: 100%;
+  top: 76vh;
+  left: 4vw;
+  font-size: clamp(80px, 100/1200 * 100vw, 120px);
+  font-weight: 800;
+  font-feature-settings: "palt";
+  text-transform: uppercase;
+  line-height: 1.6;
+  text-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  @include media(lg) {
+    font-size: clamp(74px, 90/1200 * 100vw, 100px);
+    font-weight: 800;
+  }
+  @include media(ltb) {
+    top: 50vh;
+    font-size: 64px; //52
+    font-weight: 900;
+  }
+  @include media(tb) {
+    top: 52vh;
+    font-size: clamp(40px, 60/768 * 100vw, 60px);
+    font-weight: 1200;
+    // color: $main;
+    // text-shadow:none;
+  }
+  @include media(sp) {
+    top: 54vh;
+    left: 24px; //50
+    font-size: clamp(26px, 38/500 * 100vw, 38px);
+    font-weight: 1000;
+    // color: $main;
+    // text-shadow:none;
+  }
+}
+
+.logo {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: auto;
+  z-index: 99;
+  @include media(tb) {
+    width: 80px;
+    height: auto;
+  }
+  @include media(sp) {
+    width: 60px;
+    height: auto;
+  }
+}
+
+/*  //structure   */
+.inner {
+  width: 100%;
+  max-width: 1280px; //1300px
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.ltb_ignore {
+  @include media(ltb) {
+    display: none;
+  }
+}
+
+.category-ttl {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  &_inner {
+    margin: 32px 0 20px;
+    padding-left: 16px;
+    width: 60%;
+    height: 140px;
+    color: $white;
+    @include media(lg) {
+      width: 76%;
+      height: 120px;
+    }
+    @include media(ltb) {
+      width: 76%;
+      height: 105px;
+    }
+    @include media(tb) {
+      width: 98%;
+      height: 105px;
+    }
+    @include media(sp) {
+      margin: 12px auto 0;
+      width: 98%;
+      padding-left: 0;
+      height: 95px;
+    }
+  }
+  &_up {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 8px 6px;
+    // font-size: clamp(14px, 20/1300 * 100vw, 20px);
+    font-size: $font-ttl-all;
+    font-weight: 800;
+
+    @include media(lg) {
+      font-size: $font-ttl-lg;
+    }
+    @include media(ltb) {
+      font-size: $font-ttl-ltb;
+    }
+    @include media(tb) {
+      font-size: $font-ttl-tb;
+    }
+    @include media(sp) {
+      font-size: $font-ttl-sp;
+    }
+  }
+
+  &_bottom {
+    display: block;
+    position: relative;
+    border-top: {
+      width: 2px;
+      style: solid;
+      color: currentColor;
+    }
+    width: 100%;
+    padding: 10px 5px 132px;
+    // font-size: clamp(20px, 38/1300 * 100vw, 38px);
+    font-size: $font-categoryttlup-all;
+    font-weight: 800;
+
+    @include media(lg) {
+      font-size: $font-categoryttlup-lg;
+    }
+    @include media(ltb) {
+      font-size: $font-categoryttlup-ltb;
+    }
+    @include media(tb) {
+      font-size: $font-categoryttlup-tb;
+      font-feature-settings: "palt";
+    }
+    @include media(sp) {
+      font-size: $font-categoryttlup-sp;
+      font-feature-settings: "palt";
+    }
+  }
+}
+
+/*  項目の見出し  */
+.middle-ttl {
+  display: inline-block;  //0127
+  position: relative;
+  width: 100%;            //0127
+  margin: 16px auto 0 12px;
+  padding: 10px 0;
+  //   font-size: clamp(14px, 20/1300 * 100vw, 20px);
+  font-size: $font-ttl-all;
+  font-weight: 700;
+  font-feature-settings: "palt";
+  line-height: 1.6;
+
+  @include media(lg) {
+    margin-top: 12px;
+    margin-left: 8px;
+    font-size: $font-ttl-lg;
+  }
+  @include media(ltb) {
+    margin-top: 10px;
+    margin-left: 8px;
+    font-size: $font-ttl-ltb;
+  }
+  @include media(tb) {
+    margin-top: 10px;
+    margin-left: 8px;
+    font-size: $font-ttl-tb;
+  }
+  @include media(sp) {
+    margin-top: 8px;
+    margin-left: 0;
+    padding: 0;
+    line-height: 2;
+    font-size: $font-ttl-sp;
+  }
+
+  span {
+    // font-size: clamp(10px, 16/1300 * 100vw, 16px);
+    font-size: 16px;
+    @include media(ltb) {
+      font-size: 14px;
+    }
+    @include media(tb) {
+      font-size: 14px;
+    }
+    @include media(sp) {
+      font-size: 10px;
+    }
+  }
+}
+
+/*  h3の左棒　やや大きめ　*/
+.middle-ttl__left-bar_large {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    transform: translateX(-50%);
+    padding: 0.75em;
+    border-left: 8px solid currentColor;
+    font-size: 1em;
+
+    @include media(ltb) {
+      border-left: 7px solid currentColor;
+      top: 10px;
+      transform: translateX(-50%);
+    }
+    @include media(sp) {
+      border-left: 5px solid currentColor;
+      top: 4px;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.txt {
+  //   font-size: clamp(13px, 16/1300 * 100vw, 18px);
+  font-weight: 600;
+  text-align: justify;
+  text-justify: inter-character;
+  line-height: 1.8;
+  margin: 0;
+  padding: 8px 0 8px 14px;
+  font-size: $font-all;
+  @include media(lg) {
+    padding-left: 10px;
+    font-size: $font-lg;
+  }
+  @include media(ltb) {
+    padding: 4px 0 16px 10px;
+    font-size: $font-ltb;
+  }
+  @include media(tb) {
+    font-size: $font-tb;
+  }
+  @include media(sp) {
+    padding: 8px 0 16px 1px;
+    font-size: $font-sp;
+  }
+}
+
+.txt-small-right {
+  font-size: $font-sp;
+}
+
+/*  字下げ  */
+.ind {
+  text-indent: 1em;
+}
+
+// .wrap-pc__leftRihgt_side-picture {
+//   position: relative;
+//   display: block;
+//   max-width: 97%;
+//   height: auto;
+//   margin: 0 0 0 auto;
+//   padding: 20px 0 32px;
+//   @include media(lg) {
+//     max-width: 96%;
+//   }
+//   @include media(ltb) {
+//     margin: 0 0 0 auto;
+//     padding: 0 0 20px 0;
+//     max-width: 95%;
+//   }
+//   @include media(sp) {
+//     margin: 0 auto;
+//     padding: 0;
+//     max-width: 96%;
+//   }
+// }
+
+/*  page layout */
+.three-columns {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0px auto;
+  // padding: 4px 30px 0;
+  padding: 4px 40px;
+  @include media(sp) {
+    flex-direction: column;
+    justify-content: center;
+    width: 96%;
+  }
+
+  figure {
+    display: flex;
+    // flex-wrap: wrap;
+    // display: inline-block;
+    max-width: 32%;
+    margin: 0 auto;
+    padding: 4px 2px;
+    @include media(sp) {
+      display: block;
+      max-width: 90%;
+      margin: 0 auto;
+      padding: 2px;
+    }
+  }
+}
+
+.picture {
+  width: 100%;
+  height: auto;
+
+  // &._01 {
+  //   margin-top: 4px;
+  //   margin-bottom: 66px;
+  //   @include media(sp) {
+  //     margin-top: 4px;
+  //     margin-bottom: 4px;
+  //   }
+  // }
+  // &._02 {
+  //   margin-top: 35px;
+  //   margin-bottom: 35px;
+  //   @include media(sp) {
+  //     margin-top: 4px;
+  //     margin-bottom: 4px;
+  //   }
+  // }
+  // &._03 {
+  //   margin-top: 70px;
+  //   margin-bottom: 0px;
+  //   @include media(sp) {
+  //     margin-top: 4px;
+  //     margin-bottom: 4px;
+  //   }
+  // }
+}
+
+/*  1列_layout */
+.single-column {
+  display: flex;
+  // flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+  max-width: 100%;
+  margin: 0px auto;
+  padding: 4px 24px 0;
+  @include media(ltb) {
+    padding: 4px 16px 0;
+  }
+  @include media(sp) {
+    width: 94%;
+    padding: 8px 8px 0;
+  }
+
+  li {
+    display: block;
+  }
+}
+
+.picture-ask {
+  max-width: 80%;
+  height: auto;
+  margin: 40px auto 12px;
+  @include media(tb) {
+    max-width: 96%;
+    height: auto;
+  }
+  @include media(sp) {
+    max-width: 96%;
+    height: auto;
+  }
+}
+
+/*  //以下、調整用　*/
+/*title_backcolor */
+.bc_accent {
+  background-color: $base;
+  color: $white;
+}
+/*  text_darkblue */
+.color_main {
+  color: $main;
+}
+/*  tb,spでfont-weight */
+.txt_moreBold {
+  @include media(tb) {
+    font-weight: 650;
+  }
+  @include media(sp) {
+    font-weight: 650;
+  }
+}
+/*  line-height  */
+.more_line-height {
+  line-height: 1.9;
+}
+/*  margin  */
+.mt32 {
+  margin-top: 32px;
+}
+
+/*  mediaquery別 */
+@include media(pc) {
+  .pc_ignore {
+    display: none;
+  }
+}
+@include media(ltb) {
+  .ltb_ignore {
+    display: none;
+  }
+}
+@include media(tb) {
+  .tb_ignore {
+    display: none;
+  }
+}
+@include media(sp) {
+  .sp_ignore {
+    display: none;
+  }
+}
+@include media(sp) {
+  .sp_visible {
+    display: block;
+  }
+}
+/*  //調整用ここまで  */
+
+/*  triangle to bottom   */
+.triangle_mainColor {
+  position: relative;
+  margin: -10px auto;
+  width: 105px;
+  height: 35px;
+  @include media(ltb) {
+    width: 90px;
+    height: 30px;
+  }
+  @include media(tb) {
+    width: 75px;
+    height: 25px;
+  }
+  @include media(sp) {
+    width: 60px;
+    height: 20px;
+  }
+  background: linear-gradient(to bottom left, $main 50%, transparent 50%) top
+      left / 50% 100% no-repeat,
+    linear-gradient(to bottom right, $main 50%, transparent 50%) top right / 50%
+      100% no-repeat;
+}
+
+.triangle_baseColor {
+  position: relative;
+  margin: -10px auto;
+  width: 105px;
+  height: 35px;
+  @include media(ltb) {
+    width: 90px;
+    height: 30px;
+  }
+  @include media(tb) {
+    width: 75px;
+    height: 25px;
+  }
+  @include media(sp) {
+    width: 60px;
+    height: 20px;
+  }
+  background: linear-gradient(to bottom left, $base 50%, transparent 50%) top
+      left / 50% 100% no-repeat,
+    linear-gradient(to bottom right, $base 50%, transparent 50%) top right / 50%
+      100% no-repeat;
+}
+
+.triangle_baseColor3 {
+  position: relative;
+  margin: -10px auto;
+  width: 105px;
+  height: 35px;
+  @include media(ltb) {
+    width: 90px;
+    height: 30px;
+  }
+  @include media(tb) {
+    width: 75px;
+    height: 25px;
+  }
+  @include media(sp) {
+    width: 60px;
+    height: 20px;
+  }
+  background: linear-gradient(to bottom left, $base3 50%, transparent 50%) top
+      left / 50% 100% no-repeat,
+    linear-gradient(to bottom right, $base3 50%, transparent 50%) top right /
+      50% 100% no-repeat;
+}
+
+/*  fade_in_animation img 初期値と終了値  */
+.fade_type-up {
+  opacity: 0;
+}
+.is-active .fade_type-up {
+  transition: 1s;
+  opacity: 1;
+}
+
+/*  fade_in_animation .category-ttl 初期値と終了値  */
+.fade_type-same {
+  opacity: 0;
+}
+.is-active .fade_type-same {
+  transition: 0.9s;
+  opacity: 1;
+}
+
+// /*  fade_in_animation top-title 初期値と終了値  */
+.fade_top {
+  animation: firstcatch 1.9s 0s linear forwards;
+}
+
+@keyframes firstcatch {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
